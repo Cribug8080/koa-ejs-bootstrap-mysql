@@ -10,7 +10,7 @@
     "dev": "supervisor --harmony index",
     "test": "./node_modules/mocha/bin/mocha --harmony test"
   },
-  "author": "wclimb",
+  "author": "wangli08",
   "license": "MIT",
   "dependencies": {
     "config-lite": "^2.0.0",
