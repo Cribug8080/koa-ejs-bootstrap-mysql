@@ -1,4 +1,4 @@
-<%- include("header",{type:'all'}) %>
+<%- include("header",{user:user}) %>
 	<div class="container">
 	<% if(posts.length > 0 ){  %>
 		<ul class="posts">
@@ -27,7 +27,7 @@
 	<% }else{  %>
 		<p class="tips">暂时没有文章，快去前往发表吧</p>
 	<% } %>
-		<div style="margin-top: 30px" class="pagination" id="page"></div>	
+		<div style="margin-top: 30px" class="pagination" id="page"></div>
 	</div>
 	<script src="/pagination.js"></script>
 	<script>
@@ -80,10 +80,10 @@
 						})
 					}else{
 						alert('分页不存在')
-					} 
+					}
 				}
 			})
-		
+
 		})
 		/*//滚动加载数据，现在做成分页的
 		// 初始化数据输出
@@ -109,7 +109,7 @@
 						}
 					}
 				})
-			}	
+			}
 		})
 		function eachInit(arr){
 			$.each(arr,function(i,val){
@@ -132,7 +132,7 @@
 						</a>
 						<!-- <p>userid:${val['uid']}</p> -->
 						<p class="post_time">发表时间：${val['moment']}</p>
-					</li>		`	
+					</li>		`
 			})
 		}*/
 	</script>

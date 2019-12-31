@@ -3,7 +3,7 @@ const userModel = require('../lib/mysql.js')
 const moment = require('moment')
 const checkNotLogin = require('../middlewares/check.js').checkNotLogin
 const checkLogin = require('../middlewares/check.js').checkLogin;
-const md = require('markdown-it')();  
+const md = require('markdown-it')();
 /**
  * 重置到文章页
  */
@@ -17,6 +17,10 @@ exports.getPosts = async ctx => {
     let res,
         postCount,
         name = decodeURIComponent(ctx.request.querystring.split('=')[1]);
+
+    const ejs = require('ejs');
+    console.log('test')
+    console.log(ejs.render("components/menu"))
     if (ctx.request.querystring) {
         await userModel.findPostCountByName(name)
             .then(result => {
@@ -45,6 +49,7 @@ exports.getPosts = async ctx => {
             posts: res,
             postsLength: postCount,
             postsPageLength: Math.ceil(postCount / 10),
+            user: {menu: "menu"},
 
         })
     }
